@@ -1,0 +1,9 @@
+一、基本语法知识
+1、头文件
+  增加防卫式声明，避免重复定义。如：
+  #ifndef __APPLE_H__
+  #define __APPLE_H__
+  class Apple
+  {
+  };
+  #endif // __APPLE_H__

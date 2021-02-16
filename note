@@ -1,5 +1,5 @@
-一、基本语法知识
-1、头文件
+一.基本语法知识
+1.头文件
   增加防卫式声明，避免重复定义。如：
   #ifndef __APPLE_H__
   #define __APPLE_H__
@@ -7,3 +7,17 @@
   {
   };
   #endif // __APPLE_H__
+2.构造函数
+  1）合理利用初始化列表（Initialize list），即给成员变量初始化，而不能在构造函数Body中给成员函数赋值
+  2）使用初始化列表，效率更高
+  3）构造函数访问权限设置为私有时，无法通过实例化的方式创建对象，只能通过静态成员函数获取该类的一个实例
+3.成员函数的参数传递（尽量以 pass by reference方式传递参数，快）
+  pass by value: 拷贝一份实参
+  pass by reference(to const): 传递的是引用（底层用指针实现）
+    1）若成员函数不改变该参数，则需加上const关键字
+    2）若成员函数改变该参数，则不需增加const关键字
+4.成员函数的返回值
+  return by value: 拷贝返回值并返回
+  return by reference: 
+    1）若返回值本身就存在，则return by reference
+    2）若返回值本身不存在（函数内创建的，局部变量，则不可以return by reference,只能return by value）
